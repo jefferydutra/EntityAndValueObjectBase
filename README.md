@@ -1,7 +1,7 @@
 Entity And Value Object Base
 ========================
 
-Some of the base conepts/code of this project comes from the great book :  [Professional ASP.NET Design Patterns by : Scott Millett ](http://www.amazon.com/Professional-ASP-NET-Design-Patterns-Millett/dp/0470292784/ref=sr_1_8?ie=UTF8&qid=1398108813&sr=8-8&keywords=c%23+design+patterns)
+Some of the base concepts/code of this project comes from the great book :  [Professional ASP.NET Design Patterns by : Scott Millett ](http://www.amazon.com/Professional-ASP-NET-Design-Patterns-Millett/dp/0470292784/ref=sr_1_8?ie=UTF8&qid=1398108813&sr=8-8&keywords=c%23+design+patterns)
 
 The main goal of the project is to give you a base when you are working with Domain Driven Design.  
 
@@ -47,5 +47,16 @@ The base class for Value Objects  is ValueObject  This class includes an abstrac
         protected abstract void CheckForBrokenRules();
     }
 ```
+##Custom Validation Checks
+There are some built in custom validation checks that will add built-in broken rule objects to an entity's broken rule list
 
-
+```c#
+        protected override void CheckForBrokenRules(){
+            BrokenRules
+                .AddIfPropertyIsNull(TestStringProperty, () => TestStringProperty);
+            BrokenRules
+                .AddIfPropertyEmpty(TestStringProperty, () => TestStringProperty);
+            BrokenRules
+                .AddIfIntegerPropertyLessThanOne(TestIntProperty,() => TestIntProperty);
+        }
+```
