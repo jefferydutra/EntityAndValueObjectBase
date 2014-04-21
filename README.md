@@ -26,3 +26,26 @@ The base class for Entities is EntityBase<TId>.  This class includes an Id prope
         
     }
 ```
+
+##Value Object
+The base class for Value Objects  is ValueObject  This class includes an abstract CheckForBrokenRules where you ensure your value object is valid.
+
+```c#
+    public abstract class ValueObject{
+        private readonly IList<BrokenRule> _brokenRules = new List<BrokenRule>();
+
+        public IEnumerable<BrokenRule> GetBrokenRules
+        {
+            get
+            {
+                _brokenRules.Clear();
+                CheckForBrokenRules();
+                return _brokenRules;
+            }
+        }
+        public IList<BrokenRule> BrokenRules { get { return _brokenRules; } }
+        protected abstract void CheckForBrokenRules();
+    }
+```
+
+
