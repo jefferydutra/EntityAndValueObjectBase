@@ -23,8 +23,5 @@ namespace EntityAndValueObjectBase.Infrastructure.DomainValidation{
             var message = brokenRules.GetInvalidDomainObjectExceptionMessage();
             throw new ValueObjectIsNotValidException(message);
         }
-
-
-
     }
 }
