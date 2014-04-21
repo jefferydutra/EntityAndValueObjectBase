@@ -1,11 +1,11 @@
-EntityAndValueObjectBase
+Entity And Value Object Base
 ========================
 
 Some of the base conepts/code of this project comes from the great book :  [Professional ASP.NET Design Patterns by : Scott Millett ](http://www.amazon.com/Professional-ASP-NET-Design-Patterns-Millett/dp/0470292784/ref=sr_1_8?ie=UTF8&qid=1398108813&sr=8-8&keywords=c%23+design+patterns)
 
 The main goal of the project is to give you a base when you are working with Domain Driven Design.  
 
-#####Entity
+########Entity
 The base class for Entities is EntityBase<TId>.  This class includes an Id property using genercis so that you can use whatever type you want.  It also inludes an abstract CheckForBrokenRules where you ensure your entity is valid.
 
 ```c#
