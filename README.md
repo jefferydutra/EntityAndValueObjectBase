@@ -62,7 +62,7 @@ There are some built in custom validation checks that will add built-in broken r
 ```
 
 ##ValidateEntity
-These are extension methods that allow you to find out if an entity is in a valid state or to throw an exeption if an entity is invalid.
+These are extension methods that allow you to find out if an entity is in a valid state or to throw an exeption if an entity is invalid. This currently only works with string and integer ids for entities
 ```c#
     public static class ValidateEntity
     {
@@ -91,6 +91,33 @@ These are extension methods that allow you to find out if an entity is in a vali
             throw new EntityIsNotValidException(message);
         }
 
+    }
+
+```
+
+
+##Validate Value Object
+These are extension methods that allow you to find out if a Value Object is in a valid state or to throw an exeption if invalid. 
+```c#
+    public static class ValidateValueObject{
+
+        public static bool IsValid(this ValueObject valueObject)
+        {
+            return valueObject.GetBrokenRules.HasNoBrokenRules();
+        }
+        public static void ThrowExceptionIfEntityIsInvalid(this ValueObject valueObject)
+        {
+            ThrowException(valueObject.GetBrokenRules);
+        }
+        private static void ThrowException(IEnumerable<BrokenRule> brokenRules)
+        {
+            if (!brokenRules.Any())
+            {
+                return;
+            }
+            var message = brokenRules.GetInvalidDomainObjectExceptionMessage();
+            throw new ValueObjectIsNotValidException(message);
+        }
     }
 
 ```
