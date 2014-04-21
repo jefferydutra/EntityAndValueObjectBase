@@ -1,4 +1,6 @@
-namespace EntityAndValueObjectBase.Infrastructure.Domain{
+using Infrastructure.Base.Domain;
+
+namespace EntityAndValueObjectBase.Infrastructure.Domain.BrokenRuleTypes{
     public class IntegerNeedsToBeGreaterThanZero : BrokenRule{
         public IntegerNeedsToBeGreaterThanZero(string propertyName){
             PropertyName = propertyName;

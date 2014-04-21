@@ -16,8 +16,6 @@ namespace EntityAndValueObjectBase.Infrastructure.Domain
         }
         public IList<BrokenRule> BrokenRules {get { return _brokenRules; }} 
         protected abstract void CheckForBrokenRules();
-
-       
         
     }
 }

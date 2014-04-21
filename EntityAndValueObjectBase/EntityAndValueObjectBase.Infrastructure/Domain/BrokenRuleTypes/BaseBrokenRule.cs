@@ -1,4 +1,6 @@
-namespace EntityAndValueObjectBase.Infrastructure.Domain{
+using Infrastructure.Base.Domain;
+
+namespace  EntityAndValueObjectBase.Infrastructure.Domain.BrokenRuleTypes{
     public class BaseBrokenRule : BrokenRule{
         private readonly string _customMessage;
 
@@ -12,4 +14,4 @@ namespace EntityAndValueObjectBase.Infrastructure.Domain{
             get { return PropertyName + " | " + PropertyValue + " | " + _customMessage; }
         }
     }
-}
+} 

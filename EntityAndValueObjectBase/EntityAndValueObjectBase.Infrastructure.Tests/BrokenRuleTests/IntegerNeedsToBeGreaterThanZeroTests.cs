@@ -1,4 +1,5 @@
 using EntityAndValueObjectBase.Infrastructure.Domain;
+using EntityAndValueObjectBase.Infrastructure.Domain.BrokenRuleTypes;
 using Xunit;
 
 namespace EntityAndValueObjectBase.Infrastructure.Tests.BrokenRuleTests{

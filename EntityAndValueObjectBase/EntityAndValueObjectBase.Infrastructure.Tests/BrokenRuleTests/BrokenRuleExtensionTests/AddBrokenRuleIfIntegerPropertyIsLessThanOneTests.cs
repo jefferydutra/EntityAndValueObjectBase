@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using EntityAndValueObjectBase.Infrastructure.Domain;
+using EntityAndValueObjectBase.Infrastructure.Domain.BrokenRuleTypes;
 using EntityAndValueObjectBase.Infrastructure.Tests.CustomAssertions;
 using EntityAndValueObjectBase.Infrastructure.Tests.EntityBaseTests.EntityStubs;
 using Xunit;
@@ -14,14 +15,14 @@ namespace EntityAndValueObjectBase.Infrastructure.Tests.BrokenRuleTests.BrokenRu
         [InlineData(-1)]
         public void AddsExpectedBrokenRuleWhenNull(int value)
         {
-            var entity = new EntityStubWithBrokenRules { TestIntProperty = value };
+            var entity = new EntityStub { TestIntProperty = value };
             var propertyName = PropertyNameHelper.GetName(() => entity.TestIntProperty);
             var expected = new List<BrokenRule>{
                 new IntegerNeedsToBeGreaterThanZero(propertyName)
             };
 
             var sut = new List<BrokenRule>();
-            sut.AddBrokenRuleIfIntegerPropertyLessThanOne(
+            sut.AddIfIntegerPropertyLessThanOne(
                 entity.TestIntProperty, () => entity.TestIntProperty);
 
             
@@ -31,10 +32,10 @@ namespace EntityAndValueObjectBase.Infrastructure.Tests.BrokenRuleTests.BrokenRu
         [Fact]
         public void DoesNotAddsExpectedBrokenRuleWhenNotNull()
         {
-            var entity = new EntityStubWithBrokenRules { TestIntProperty = 1 };
+            var entity = new EntityStub { TestIntProperty = 1 };
 
             var sut = new List<BrokenRule>();
-            sut.AddBrokenRuleIfIntegerPropertyLessThanOne(
+            sut.AddIfIntegerPropertyLessThanOne(
                 entity.TestIntProperty, () => entity.TestIntProperty);
 
             Assert.False(sut.Any());

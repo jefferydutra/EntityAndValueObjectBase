@@ -1,4 +1,6 @@
-namespace EntityAndValueObjectBase.Infrastructure.Domain{
+using Infrastructure.Base.Domain;
+
+namespace EntityAndValueObjectBase.Infrastructure.Domain.BrokenRuleTypes{
     public class NotNull : BrokenRule{
         public NotNull(string propertyName){
             PropertyName = propertyName;

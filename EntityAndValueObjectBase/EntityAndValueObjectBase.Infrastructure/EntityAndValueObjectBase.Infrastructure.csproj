@@ -39,14 +39,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\BaseBrokenRule.cs" />
+    <Compile Include="DomainValidation\BrokenRulesHelpers.cs" />
+    <Compile Include="DomainValidation\ValidateEntity.cs" />
+    <Compile Include="DomainValidation\ValidateValueObject.cs" />
     <Compile Include="Domain\BrokenRule.cs" />
     <Compile Include="Domain\BrokenRuleExtensions.cs" />
+    <Compile Include="Domain\BrokenRuleTypes\BaseBrokenRule.cs" />
+    <Compile Include="Domain\BrokenRuleTypes\IntegerNeedsToBeGreaterThanZero.cs" />
+    <Compile Include="Domain\BrokenRuleTypes\NotEmptyString.cs" />
+    <Compile Include="Domain\BrokenRuleTypes\NotNull.cs" />
     <Compile Include="Domain\EntityBase.cs" />
-    <Compile Include="Domain\IntegerNeedsToBeGreaterThanZero.cs" />
-    <Compile Include="Domain\NotEmptyString.cs" />
-    <Compile Include="Domain\NotNull.cs" />
+    <Compile Include="Domain\EntityIsNotValidException.cs" />
     <Compile Include="Domain\PropertyNameHelper.cs" />
+    <Compile Include="Domain\ValueObject.cs" />
+    <Compile Include="Domain\ValueObjectIsNotValidException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

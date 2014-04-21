@@ -55,12 +55,21 @@
     <Compile Include="BrokenRuleTests\EmptyStringTests.cs" />
     <Compile Include="BrokenRuleTests\IntegerNeedsToBeGreaterThanZeroTests.cs" />
     <Compile Include="BrokenRuleTests\NullBrokenRuleObjectTests.cs" />
-    <Compile Include="Create\EntityStubWithBrokenRulesCreate.cs" />
+    <Compile Include="Create\EntityStubCreate.cs" />
+    <Compile Include="Create\ValueObjectCreate.cs" />
     <Compile Include="CustomAssertions\BrokenRuleAssertions.cs" />
     <Compile Include="EntityBaseTests\EntityBaseValidationTests.cs" />
-    <Compile Include="EntityBaseTests\EntityStubs\EntityStubWithBrokenRules.cs" />
+    <Compile Include="EntityBaseTests\EntityStubs\EntityStub.cs" />
+    <Compile Include="EntityBaseTests\EntityStubs\EntityStubIntIdWithBrokeRules.cs" />
+    <Compile Include="EntityBaseTests\EntityStubs\EntityStubStringId.cs" />
+    <Compile Include="EntityBaseTests\EntityStubs\EntityStubStringIdWithBrokeRules.cs" />
     <Compile Include="EntityBrokenRuleTests\CheckNullTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidateValueObjectTests\EntityIsValidTests.cs" />
+    <Compile Include="ValidateValueObjectTests\ThrowExceptionIfEntityInvalidTests.cs" />
+    <Compile Include="ValueObjectTests\Stubs\ValueObjectStub.cs" />
+    <Compile Include="ValueObjectTests\Stubs\ValueObjectStubWithBrokeRules.cs" />
+    <Compile Include="ValueObjectTests\ValidationTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EntityAndValueObjectBase.Infrastructure\EntityAndValueObjectBase.Infrastructure.csproj">
