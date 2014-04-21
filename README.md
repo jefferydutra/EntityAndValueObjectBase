@@ -5,7 +5,7 @@ Some of the base conepts/code of this project comes from the great book :  [Prof
 
 The main goal of the project is to give you a base when you are working with Domain Driven Design.  
 
-########Entity
+##Entity
 The base class for Entities is EntityBase<TId>.  This class includes an Id property using genercis so that you can use whatever type you want.  It also inludes an abstract CheckForBrokenRules where you ensure your entity is valid.
 
 ```c#
