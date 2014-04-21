@@ -60,3 +60,37 @@ There are some built in custom validation checks that will add built-in broken r
                 .AddIfIntegerPropertyLessThanOne(TestIntProperty,() => TestIntProperty);
         }
 ```
+
+##ValidateEntity
+These are extension methods that allow you to find out if an entity is in a valid state or to throw an exeption if an entity is invalid.
+```c#
+    public static class ValidateEntity
+    {
+        public static bool IsValid(this EntityBase<int> entity)
+        {
+            return entity.GetBrokenRules.HasNoBrokenRules();
+        }
+        public static bool IsValid(this EntityBase<string> entity)
+        {
+            return entity.GetBrokenRules.HasNoBrokenRules();
+        }
+
+        public static void ThrowExceptionIfEntityIsInvalid(this EntityBase<int> entity){
+            ThrowException(entity.GetBrokenRules);
+        }
+        public static void ThrowExceptionIfEntityIsInvalid(this EntityBase<string> entity){
+            ThrowException(entity.GetBrokenRules);
+        }
+
+        private static void ThrowException(IEnumerable<BrokenRule> brokenRules){
+            if (!brokenRules.Any())
+            {
+                return;
+            }
+            var message = brokenRules.GetInvalidDomainObjectExceptionMessage();
+            throw new EntityIsNotValidException(message);
+        }
+
+    }
+
+```
