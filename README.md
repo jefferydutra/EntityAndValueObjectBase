@@ -7,6 +7,7 @@ The main goal of the project is to give you a base when you are working with Dom
 
 ##Contents
 1. [Entity](#Entity)
+1. [Value Object](#Value Object)
 
 ###Entity
 The base class for Entities is EntityBase<TId>.  This class includes an Id property using genercis so that you can use whatever type you want.  It also inludes an abstract CheckForBrokenRules where you ensure your entity is valid.
