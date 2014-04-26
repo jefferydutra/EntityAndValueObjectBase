@@ -9,8 +9,9 @@ The main goal of the project is to give you a base when you are working with Dom
 1. [Entity](#entity)
 2. [Value Object](#value-object)
 3. [Custom Validation Checks ](#custom-validation-checks)
-4. [Validate Entity Extensions](#validate-entity-extensions)
-5. [Validate Value Object](#validate-value-object)
+4. [Validate Value Object](#validate-value-object)
+5. [Validate Entity Extensions](#validate-entity-extensions)
+5. [IValidate Entity](#ivalidate-entity)
 
 ###Entity
 The base class for Entities is EntityBase<TId>.  This class includes an Id property using genercis so that you can use whatever type you want.  It also inludes an abstract CheckForBrokenRules where you ensure your entity is valid.
@@ -68,6 +69,33 @@ There are some built in custom validation checks that will add built-in broken r
         }
 ```
 
+###Validate Value Object
+These are extension methods that allow you to find out if a Value Object is in a valid state or to throw an exeption if invalid. 
+```c#
+    public static class ValidateValueObject{
+
+        public static bool IsValid(this ValueObject valueObject)
+        {
+            return valueObject.GetBrokenRules.HasNoBrokenRules();
+        }
+        public static void ThrowExceptionIfEntityIsInvalid(this ValueObject valueObject)
+        {
+            ThrowException(valueObject.GetBrokenRules);
+        }
+        private static void ThrowException(IEnumerable<BrokenRule> brokenRules)
+        {
+            if (!brokenRules.Any())
+            {
+                return;
+            }
+            var message = brokenRules.GetInvalidDomainObjectExceptionMessage();
+            throw new ValueObjectIsNotValidException(message);
+        }
+    }
+
+```
+
+
 ###Validate Entity Extensions
 These are extension methods that allow you to find out if an entity is in a valid state or to throw an exeption if an entity is invalid. This currently only works with string, guid and integer ids for entities
 ```c#
@@ -109,28 +137,20 @@ These are extension methods that allow you to find out if an entity is in a vali
 ```
 
 
-###Validate Value Object
-These are extension methods that allow you to find out if a Value Object is in a valid state or to throw an exeption if invalid. 
+###IValidate Entity
+This provides an interface that allows you program to an interface as opposed to a concrete implementation.  The included concrete implementation ValidateEntity calls the corresponding methods from  ValidateEntityExtensions. This currently only works with string, guid and integer ids for entities
 ```c#
-    public static class ValidateValueObject{
-
-        public static bool IsValid(this ValueObject valueObject)
-        {
-            return valueObject.GetBrokenRules.HasNoBrokenRules();
-        }
-        public static void ThrowExceptionIfEntityIsInvalid(this ValueObject valueObject)
-        {
-            ThrowException(valueObject.GetBrokenRules);
-        }
-        private static void ThrowException(IEnumerable<BrokenRule> brokenRules)
-        {
-            if (!brokenRules.Any())
-            {
-                return;
-            }
-            var message = brokenRules.GetInvalidDomainObjectExceptionMessage();
-            throw new ValueObjectIsNotValidException(message);
-        }
+    public interface IValidateEntity
+    {
+        bool IsValid(EntityBase<int> entity);
+        bool IsValid(EntityBase<string> entity);
+        bool IsValid(EntityBase<Guid> entity);
+        IEnumerable<string> GetErrorMessages(EntityBase<int> entity);
+        IEnumerable<string> GetErrorMessages(EntityBase<string> entity);
+        IEnumerable<string> GetErrorMessages(EntityBase<Guid> entity);
+        void ThrowExceptionIfEntityIsInvalid(EntityBase<int> entity);
+        void ThrowExceptionIfEntityIsInvalid(EntityBase<string> entity);
+        void ThrowExceptionIfEntityIsInvalid(EntityBase<Guid> entity);
     }
-
 ```
+
