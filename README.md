@@ -158,17 +158,6 @@ This provides an interface that allows you program to an interface as opposed to
 ###Validate Entity Test Stub Factory
 This factory class simplifies the creation of "Test Stubs" for IValidateEntity. The only one that may seem odd is ValidateEntityInNotValidStateNoExceptionStub; the point of this one is that it allows you to perfrom state verification on your entity without having your test fail because of an exception
 ```c#
-    public static class ValidateEntityStubFactory{
-        public static IValidateEntity CreateValidateEntity(ValidateEntityStubType validateEntityStubType){
-            if (validateEntityStubType == ValidateEntityStubType.NotValidAndThrowsException)
-            {
-                return new ValidateEntityInNotValidStateWtihExceptionStub();
-            }
-            if (validateEntityStubType == ValidateEntityStubType.NotValidAndShouldNotThrowException)
-            {
-                return new ValidateEntityInNotValidStateNoExceptionStub();
-            }
-            return new ValidateEntityInValidStateStub();
-        }
-    }
+ ValidateEntityStubFactory
+              .CreateValidateEntity(ValidateEntityStubType.NotValidAndThrowsException);
 ```
