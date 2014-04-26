@@ -2,3 +2,6 @@ EntityAndValueObjectBase/EntityAndValueObjectBase.v11.suo
 EntityAndValueObjectBase/EntityAndValueObjectBase.sln.DotSettings.user
 *.cache
 *.cache
+EntityAndValueObjectBase/EntityAndValueObjectBase.Infrastructure.Tests/obj/Debug/EntityAndValueObjectBase.Infrastructure.Tests.csprojResolveAssemblyReference.cache
+*.force
+*.cache
