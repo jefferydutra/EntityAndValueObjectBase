@@ -69,7 +69,7 @@ There are some built in custom validation checks that will add built-in broken r
 ```
 
 ###Validate Entity Extensions
-These are extension methods that allow you to find out if an entity is in a valid state or to throw an exeption if an entity is invalid. This currently only works with string and integer ids for entities
+These are extension methods that allow you to find out if an entity is in a valid state or to throw an exeption if an entity is invalid. This currently only works with string, guid and integer ids for entities
 ```c#
     public static class ValidateEntityExtensions{
         public static bool IsValid(this EntityBase<int> entity)
