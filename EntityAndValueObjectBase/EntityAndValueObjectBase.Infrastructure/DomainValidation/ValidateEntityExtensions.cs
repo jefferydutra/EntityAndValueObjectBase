@@ -5,9 +5,7 @@ using EntityAndValueObjectBase.Infrastructure.Domain;
 
 namespace EntityAndValueObjectBase.Infrastructure.DomainValidation
 {
-    public static class ValidateEntityExtensions
-    {
-
+    public static class ValidateEntityExtensions{
         public static bool IsValid(this EntityBase<int> entity)
         {
             return entity.GetBrokenRules.HasNoBrokenRules();
@@ -41,7 +39,5 @@ namespace EntityAndValueObjectBase.Infrastructure.DomainValidation
             var message = brokenRules.GetInvalidDomainObjectExceptionMessage();
             throw new EntityIsNotValidException(message);
         }
-
     }
-    
 }
