@@ -9,7 +9,7 @@ The main goal of the project is to give you a base when you are working with Dom
 1. [Entity](#entity)
 2. [Value Object](#value-object)
 3. [Custom Validation Checks ](#custom-validation-checks)
-4. [Validate Entity](#validate-entity)
+4. [Validate Entity Extensions](#validate-entity-extensions)
 5. [Validate Value Object](#validate-value-object)
 
 ###Entity
@@ -68,11 +68,10 @@ There are some built in custom validation checks that will add built-in broken r
         }
 ```
 
-###Validate Entity
+###Validate Entity Extensions
 These are extension methods that allow you to find out if an entity is in a valid state or to throw an exeption if an entity is invalid. This currently only works with string and integer ids for entities
 ```c#
-    public static class ValidateEntity
-    {
+    public static class ValidateEntityExtensions{
         public static bool IsValid(this EntityBase<int> entity)
         {
             return entity.GetBrokenRules.HasNoBrokenRules();
@@ -82,10 +81,19 @@ These are extension methods that allow you to find out if an entity is in a vali
             return entity.GetBrokenRules.HasNoBrokenRules();
         }
 
+        public static bool IsValid(this EntityBase<Guid> entity)
+        {
+            return entity.GetBrokenRules.HasNoBrokenRules();
+        }
+
         public static void ThrowExceptionIfEntityIsInvalid(this EntityBase<int> entity){
             ThrowException(entity.GetBrokenRules);
         }
         public static void ThrowExceptionIfEntityIsInvalid(this EntityBase<string> entity){
+            ThrowException(entity.GetBrokenRules);
+        }
+        public static void ThrowExceptionIfEntityIsInvalid(this EntityBase<Guid> entity)
+        {
             ThrowException(entity.GetBrokenRules);
         }
 
@@ -97,9 +105,7 @@ These are extension methods that allow you to find out if an entity is in a vali
             var message = brokenRules.GetInvalidDomainObjectExceptionMessage();
             throw new EntityIsNotValidException(message);
         }
-
     }
-
 ```
 
 
