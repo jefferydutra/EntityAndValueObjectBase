@@ -5,9 +5,12 @@ Some of the base concepts/code of this project comes from the great book :  [Pro
 
 The main goal of the project is to give you a base when you are working with Domain Driven Design.  
 
-##Contents
+##Project Overview
 1. [Entity](#entity)
-1. [Value Object](#value-object)
+2. [Value Object](#value-object)
+3. [Custom Validation Checks ](#custom-validation-checks)
+4. [ValidateEntity](#validateEntity)
+5. [Validate Value Object](#validate-value-object))
 
 ###Entity
 The base class for Entities is EntityBase<TId>.  This class includes an Id property using genercis so that you can use whatever type you want.  It also inludes an abstract CheckForBrokenRules where you ensure your entity is valid.
@@ -51,7 +54,7 @@ The base class for Value Objects  is ValueObject  This class includes an abstrac
         protected abstract void CheckForBrokenRules();
     }
 ```
-##Custom Validation Checks
+###Custom Validation Checks
 There are some built in custom validation checks that will add built-in broken rule objects to an entity's broken rule list
 
 ```c#
@@ -65,7 +68,7 @@ There are some built in custom validation checks that will add built-in broken r
         }
 ```
 
-##ValidateEntity
+###ValidateEntity
 These are extension methods that allow you to find out if an entity is in a valid state or to throw an exeption if an entity is invalid. This currently only works with string and integer ids for entities
 ```c#
     public static class ValidateEntity
@@ -100,7 +103,7 @@ These are extension methods that allow you to find out if an entity is in a vali
 ```
 
 
-##Validate Value Object
+###Validate Value Object
 These are extension methods that allow you to find out if a Value Object is in a valid state or to throw an exeption if invalid. 
 ```c#
     public static class ValidateValueObject{
