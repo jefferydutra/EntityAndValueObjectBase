@@ -12,7 +12,7 @@ The main goal of the project is to give you a base when you are working with Dom
 4. [Validate Value Object](#validate-value-object)
 5. [Validate Entity Extensions](#validate-entity-extensions)
 6. [IValidate Entity](#ivalidate-entity)
-7. [Validate Entity Test Stub Factory](#ealidate-entity--test-stub-factory)
+7. [Validate Entity Test Stub Factory](#validate-entity-test-stub-factory)
 
 ###Entity
 The base class for Entities is EntityBase<TId>.  This class includes an Id property using genercis so that you can use whatever type you want.  It also inludes an abstract CheckForBrokenRules where you ensure your entity is valid.
