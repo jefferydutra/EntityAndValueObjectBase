@@ -99,32 +99,14 @@ These are extension methods that allow you to find out if a Value Object is in a
 
 ###Validate Entity Extensions
 These are extension methods that allow you to find out if an entity is in a valid state or to throw an exeption if an entity is invalid. This currently only works with string, guid and integer ids for entities
+
+####IsValid Method
 ```c#
-    public static class ValidateEntityExtensions{
-        public static bool IsValid(this EntityBase<int> entity)
-        {
-            return entity.GetBrokenRules.HasNoBrokenRules();
-        }
-        public static bool IsValid(this EntityBase<string> entity)
-        {
-            return entity.GetBrokenRules.HasNoBrokenRules();
-        }
-
-        public static bool IsValid(this EntityBase<Guid> entity)
-        {
-            return entity.GetBrokenRules.HasNoBrokenRules();
-        }
-
-        public static void ThrowExceptionIfEntityIsInvalid(this EntityBase<int> entity){
-            ThrowException(entity.GetBrokenRules);
-        }
-        public static void ThrowExceptionIfEntityIsInvalid(this EntityBase<string> entity){
-            ThrowException(entity.GetBrokenRules);
-        }
-        public static void ThrowExceptionIfEntityIsInvalid(this EntityBase<Guid> entity)
-        {
-            ThrowException(entity.GetBrokenRules);
-        }
+    return entity.GetBrokenRules.HasNoBrokenRules();
+```
+####ThrowException Method
+```c#
+        ThrowException(entity.GetBrokenRules);
 
         private static void ThrowException(IEnumerable<BrokenRule> brokenRules){
             if (!brokenRules.Any())
@@ -134,8 +116,9 @@ These are extension methods that allow you to find out if an entity is in a vali
             var message = brokenRules.GetInvalidDomainObjectExceptionMessage();
             throw new EntityIsNotValidException(message);
         }
-    }
+    
 ```
+
 
 
 ###IValidate Entity
@@ -167,5 +150,5 @@ ValidateEntityStubFactory
 ```
 ```c#
 ValidateEntityStubFactory
-              .CreateValidateEntity(ValidateEntityStubType.NotValidAndThrowsException);
+    .CreateValidateEntity(ValidateEntityStubType.NotValidAndThrowsException);
 ```
