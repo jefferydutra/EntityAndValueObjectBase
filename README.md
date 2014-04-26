@@ -11,7 +11,8 @@ The main goal of the project is to give you a base when you are working with Dom
 3. [Custom Validation Checks ](#custom-validation-checks)
 4. [Validate Value Object](#validate-value-object)
 5. [Validate Entity Extensions](#validate-entity-extensions)
-5. [IValidate Entity](#ivalidate-entity)
+6. [IValidate Entity](#ivalidate-entity)
+7. [Validate Entity Test Stub Factory](#ealidate-entity--test-stub-factory)
 
 ###Entity
 The base class for Entities is EntityBase<TId>.  This class includes an Id property using genercis so that you can use whatever type you want.  It also inludes an abstract CheckForBrokenRules where you ensure your entity is valid.
@@ -154,3 +155,20 @@ This provides an interface that allows you program to an interface as opposed to
     }
 ```
 
+###Validate Entity Test Stub Factory
+This factory class simplifies the creation of "Test Stubs" for IValidateEntity. The only one that may seem odd is ValidateEntityInNotValidStateNoExceptionStub; the point of this one is that allows you to perfrom state verification on your entity without having your test fail because of an exception
+```c#
+    public static class ValidateEntityStubFactory{
+        public static IValidateEntity CreateValidateEntity(ValidateEntityStubType validateEntityStubType){
+            if (validateEntityStubType == ValidateEntityStubType.NotValidAndThrowsException)
+            {
+                return new ValidateEntityInNotValidStateWtihExceptionStub();
+            }
+            if (validateEntityStubType == ValidateEntityStubType.NotValidAndShouldNotThrowException)
+            {
+                return new ValidateEntityInNotValidStateNoExceptionStub();
+            }
+            return new ValidateEntityInValidStateStub();
+        }
+    }
+```
