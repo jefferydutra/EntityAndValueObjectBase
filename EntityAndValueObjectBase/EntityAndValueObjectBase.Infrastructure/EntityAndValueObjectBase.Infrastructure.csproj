@@ -56,6 +56,7 @@
     <Compile Include="Domain\ValueObject.cs" />
     <Compile Include="Domain\ValueObjectIsNotValidException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestHelpers\Stubs\ValidateEntityInNotValidStateNoExceptionStub.cs" />
     <Compile Include="TestHelpers\Stubs\ValidateEntityInValidStateStub.cs" />
     <Compile Include="TestHelpers\Stubs\ValidateEntityInNotValidStateStub.cs" />
   </ItemGroup>
