@@ -10,7 +10,10 @@ namespace EntityAndValueObjectBase.Infrastructure.DomainValidation{
             return !brokenRules.Any();
         }
 
-
+        public static IEnumerable<string> GetMessages(this IEnumerable<BrokenRule> brokenRules)
+        {
+            return brokenRules.Select(x=> x.Message);
+        }
         public static string GetInvalidDomainObjectExceptionMessage(this IEnumerable<BrokenRule> brokenRules)
         {
 
