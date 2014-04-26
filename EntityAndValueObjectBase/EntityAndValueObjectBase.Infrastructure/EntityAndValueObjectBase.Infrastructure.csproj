@@ -56,9 +56,11 @@
     <Compile Include="Domain\ValueObject.cs" />
     <Compile Include="Domain\ValueObjectIsNotValidException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestHelpers\Stubs\ValidateEntityStubFactory.cs" />
     <Compile Include="TestHelpers\Stubs\ValidateEntityInNotValidStateNoExceptionStub.cs" />
     <Compile Include="TestHelpers\Stubs\ValidateEntityInValidStateStub.cs" />
     <Compile Include="TestHelpers\Stubs\ValidateEntityInNotValidStateStub.cs" />
+    <Compile Include="TestHelpers\Stubs\ValidateEntityStubType.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
