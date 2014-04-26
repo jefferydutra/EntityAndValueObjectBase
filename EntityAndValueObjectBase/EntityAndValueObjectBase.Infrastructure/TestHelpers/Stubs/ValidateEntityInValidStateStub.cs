@@ -5,7 +5,7 @@ using EntityAndValueObjectBase.Infrastructure.DomainValidation;
 
 namespace EntityAndValueObjectBase.Infrastructure.TestHelpers.Stubs
 {
-    public class ValidateEntityInAValidStateStub : IValidateEntity
+    public class ValidateEntityInValidStateStub : IValidateEntity
     {
         public bool IsValid(EntityBase<int> entity)
         {

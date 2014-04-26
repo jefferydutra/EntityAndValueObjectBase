@@ -6,7 +6,7 @@ namespace EntityAndValueObjectBase.Infrastructure.Tests.Create
 {
     public static class EntityStubCreate
     {
-        public static EntityStub Anonymous()
+        public static EntityStub AnonymousIntegerId()
         {
             return new Fixture().Create<EntityStub>();
         }

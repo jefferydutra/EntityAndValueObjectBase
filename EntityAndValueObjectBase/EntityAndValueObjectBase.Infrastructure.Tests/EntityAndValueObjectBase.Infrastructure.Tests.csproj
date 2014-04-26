@@ -68,6 +68,7 @@
     <Compile Include="EntityBrokenRuleTests\CheckNullTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestHelpersTests\ValidateEntityInAValidStateStubObjectTests.cs" />
+    <Compile Include="TestHelpersTests\ValidateEntityInNotValidStateStubObjectTests.cs" />
     <Compile Include="ValidateValueObjectTests\EntityIsValidTests.cs" />
     <Compile Include="ValidateValueObjectTests\ThrowExceptionIfEntityInvalidTests.cs" />
     <Compile Include="ValueObjectTests\Stubs\ValueObjectStub.cs" />

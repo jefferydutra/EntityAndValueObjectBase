@@ -11,3 +11,16 @@ C:\Users\dutraj\Documents\GitHub\EntityAndValueObjectBase\EntityAndValueObjectBa
 C:\Users\dutraj\Documents\GitHub\EntityAndValueObjectBase\EntityAndValueObjectBase\EntityAndValueObjectBase.Infrastructure.Tests\bin\Debug\Ploeh.AutoFixture.xml
 C:\Users\dutraj\Documents\GitHub\EntityAndValueObjectBase\EntityAndValueObjectBase\EntityAndValueObjectBase.Infrastructure.Tests\bin\Debug\xunit.xml
 C:\Users\dutraj\Documents\GitHub\EntityAndValueObjectBase\EntityAndValueObjectBase\EntityAndValueObjectBase.Infrastructure.Tests\bin\Debug\xunit.extensions.xml
+C:\Users\Jeff\Documents\GitHub\EntityAndValueObjectBase\EntityAndValueObjectBase\EntityAndValueObjectBase.Infrastructure.Tests\bin\Debug\EntityAndValueObjectBase.Infrastructure.Tests.dll
+C:\Users\Jeff\Documents\GitHub\EntityAndValueObjectBase\EntityAndValueObjectBase\EntityAndValueObjectBase.Infrastructure.Tests\bin\Debug\EntityAndValueObjectBase.Infrastructure.Tests.pdb
+C:\Users\Jeff\Documents\GitHub\EntityAndValueObjectBase\EntityAndValueObjectBase\EntityAndValueObjectBase.Infrastructure.Tests\bin\Debug\EntityAndValueObjectBase.Infrastructure.dll
+C:\Users\Jeff\Documents\GitHub\EntityAndValueObjectBase\EntityAndValueObjectBase\EntityAndValueObjectBase.Infrastructure.Tests\bin\Debug\Ploeh.AutoFixture.dll
+C:\Users\Jeff\Documents\GitHub\EntityAndValueObjectBase\EntityAndValueObjectBase\EntityAndValueObjectBase.Infrastructure.Tests\bin\Debug\xunit.dll
+C:\Users\Jeff\Documents\GitHub\EntityAndValueObjectBase\EntityAndValueObjectBase\EntityAndValueObjectBase.Infrastructure.Tests\bin\Debug\xunit.extensions.dll
+C:\Users\Jeff\Documents\GitHub\EntityAndValueObjectBase\EntityAndValueObjectBase\EntityAndValueObjectBase.Infrastructure.Tests\bin\Debug\EntityAndValueObjectBase.Infrastructure.pdb
+C:\Users\Jeff\Documents\GitHub\EntityAndValueObjectBase\EntityAndValueObjectBase\EntityAndValueObjectBase.Infrastructure.Tests\bin\Debug\Ploeh.AutoFixture.xml
+C:\Users\Jeff\Documents\GitHub\EntityAndValueObjectBase\EntityAndValueObjectBase\EntityAndValueObjectBase.Infrastructure.Tests\bin\Debug\xunit.xml
+C:\Users\Jeff\Documents\GitHub\EntityAndValueObjectBase\EntityAndValueObjectBase\EntityAndValueObjectBase.Infrastructure.Tests\bin\Debug\xunit.extensions.xml
+C:\Users\Jeff\Documents\GitHub\EntityAndValueObjectBase\EntityAndValueObjectBase\EntityAndValueObjectBase.Infrastructure.Tests\obj\Debug\EntityAndValueObjectBase.Infrastructure.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Jeff\Documents\GitHub\EntityAndValueObjectBase\EntityAndValueObjectBase\EntityAndValueObjectBase.Infrastructure.Tests\obj\Debug\EntityAndValueObjectBase.Infrastructure.Tests.dll
+C:\Users\Jeff\Documents\GitHub\EntityAndValueObjectBase\EntityAndValueObjectBase\EntityAndValueObjectBase.Infrastructure.Tests\obj\Debug\EntityAndValueObjectBase.Infrastructure.Tests.pdb

@@ -9,7 +9,7 @@ namespace EntityAndValueObjectBase.Infrastructure.Tests.EntityBaseTests
         [Fact]
         public void WhenAnObjectIsNullANullBrokenRuleIsAdded()
         {
-            var sut = EntityStubCreate.Anonymous();
+            var sut = EntityStubCreate.AnonymousIntegerId();
             Assert.False(sut.GetBrokenRules.Any());
             sut.TestStringProperty = null;
 

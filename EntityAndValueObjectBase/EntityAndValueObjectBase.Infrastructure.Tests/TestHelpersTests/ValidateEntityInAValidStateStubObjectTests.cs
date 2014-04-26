@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Dynamic;
 using System.Linq;
 using EntityAndValueObjectBase.Infrastructure.Domain;
 using EntityAndValueObjectBase.Infrastructure.TestHelpers.Stubs;
@@ -12,7 +11,7 @@ namespace EntityAndValueObjectBase.Infrastructure.Tests.TestHelpersTests
     {
         private EntityBase<int> GetEntityIntId
         {
-            get { return EntityStubCreate.Anonymous(); }
+            get { return EntityStubCreate.AnonymousIntegerId(); }
         }
         private EntityBase<string> GetEntityStringId
         {
@@ -22,11 +21,11 @@ namespace EntityAndValueObjectBase.Infrastructure.Tests.TestHelpersTests
         {
             get { return EntityStubCreate.AnonymousGuidId(); }
         }
-        private readonly ValidateEntityInAValidStateStub _sut;
+        private readonly ValidateEntityInValidStateStub _sut;
 
         public ValidateEntityInAValidStateStubObjectTests()
         {
-            _sut = new ValidateEntityInAValidStateStub();
+            _sut = new ValidateEntityInValidStateStub();
 
         }
         [Fact]
