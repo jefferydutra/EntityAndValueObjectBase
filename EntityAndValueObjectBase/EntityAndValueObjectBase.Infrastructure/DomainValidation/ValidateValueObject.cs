@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using EntityAndValueObjectBase.Infrastructure.Domain;
-using Infrastructure.Base.Domain;
 
 namespace EntityAndValueObjectBase.Infrastructure.DomainValidation{
     public static class ValidateValueObject{

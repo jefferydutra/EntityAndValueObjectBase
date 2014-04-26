@@ -1,5 +1,3 @@
-using Infrastructure.Base.Domain;
-
 namespace  EntityAndValueObjectBase.Infrastructure.Domain.BrokenRuleTypes{
     public class BaseBrokenRule : BrokenRule{
         private readonly string _customMessage;

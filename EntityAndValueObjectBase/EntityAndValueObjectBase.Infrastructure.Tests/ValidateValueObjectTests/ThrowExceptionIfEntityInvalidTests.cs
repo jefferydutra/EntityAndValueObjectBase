@@ -1,6 +1,6 @@
-﻿using EntityAndValueObjectBase.Infrastructure.DomainValidation;
+﻿using EntityAndValueObjectBase.Infrastructure.Domain;
+using EntityAndValueObjectBase.Infrastructure.DomainValidation;
 using EntityAndValueObjectBase.Infrastructure.Tests.Create;
-using Infrastructure.Base.Domain;
 using Xunit;
 
 namespace EntityAndValueObjectBase.Infrastructure.Tests.ValidateValueObjectTests{

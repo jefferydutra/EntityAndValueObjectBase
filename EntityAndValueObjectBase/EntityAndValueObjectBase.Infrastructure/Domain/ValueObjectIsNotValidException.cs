@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Infrastructure.Base.Domain{
+namespace EntityAndValueObjectBase.Infrastructure.Domain{
     public class ValueObjectIsNotValidException : Exception
     {
         public ValueObjectIsNotValidException(string message)
