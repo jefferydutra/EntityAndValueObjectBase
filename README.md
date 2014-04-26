@@ -9,7 +9,7 @@ The main goal of the project is to give you a base when you are working with Dom
 1. [Entity](#entity)
 2. [Value Object](#value-object)
 3. [Custom Validation Checks ](#custom-validation-checks)
-4. [ValidateEntity](#validateentity)
+4. [Validate Entity](#validate-entity)
 5. [Validate Value Object](#validate-value-object)
 
 ###Entity
@@ -68,7 +68,7 @@ There are some built in custom validation checks that will add built-in broken r
         }
 ```
 
-###ValidateEntity
+###Validate Entity
 These are extension methods that allow you to find out if an entity is in a valid state or to throw an exeption if an entity is invalid. This currently only works with string and integer ids for entities
 ```c#
     public static class ValidateEntity
