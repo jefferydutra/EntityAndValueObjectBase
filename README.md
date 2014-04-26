@@ -9,8 +9,8 @@ The main goal of the project is to give you a base when you are working with Dom
 1. [Entity](#entity)
 2. [Value Object](#value-object)
 3. [Custom Validation Checks ](#custom-validation-checks)
-4. [ValidateEntity](#validateEntity)
-5. [Validate Value Object](#validate-value-object))
+4. [ValidateEntity](#validateentity)
+5. [Validate Value Object](#validate-value-object)
 
 ###Entity
 The base class for Entities is EntityBase<TId>.  This class includes an Id property using genercis so that you can use whatever type you want.  It also inludes an abstract CheckForBrokenRules where you ensure your entity is valid.
