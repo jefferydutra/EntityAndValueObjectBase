@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DomainValidation\BrokenRulesHelpers.cs" />
-    <Compile Include="DomainValidation\ValidateEntity.cs" />
+    <Compile Include="DomainValidation\ValidateEntityExtensions.cs" />
     <Compile Include="DomainValidation\ValidateValueObject.cs" />
     <Compile Include="Domain\BrokenRule.cs" />
     <Compile Include="Domain\BrokenRuleExtensions.cs" />
