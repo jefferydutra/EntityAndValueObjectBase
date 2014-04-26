@@ -5,7 +5,10 @@ Some of the base concepts/code of this project comes from the great book :  [Pro
 
 The main goal of the project is to give you a base when you are working with Domain Driven Design.  
 
-##Entity
+##Contents
+1. [Entity]
+
+###Entity
 The base class for Entities is EntityBase<TId>.  This class includes an Id property using genercis so that you can use whatever type you want.  It also inludes an abstract CheckForBrokenRules where you ensure your entity is valid.
 
 ```c#
@@ -27,7 +30,7 @@ The base class for Entities is EntityBase<TId>.  This class includes an Id prope
     }
 ```
 
-##Value Object
+###Value Object
 The base class for Value Objects  is ValueObject  This class includes an abstract CheckForBrokenRules where you ensure your value object is valid.
 
 ```c#
