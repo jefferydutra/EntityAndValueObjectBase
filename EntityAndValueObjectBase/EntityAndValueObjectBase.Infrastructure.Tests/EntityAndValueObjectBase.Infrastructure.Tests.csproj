@@ -61,11 +61,13 @@
     <Compile Include="CustomAssertions\BrokenRuleAssertions.cs" />
     <Compile Include="EntityBaseTests\EntityBaseValidationTests.cs" />
     <Compile Include="EntityBaseTests\EntityStubs\EntityStub.cs" />
+    <Compile Include="EntityBaseTests\EntityStubs\EntityStubGuidId.cs" />
     <Compile Include="EntityBaseTests\EntityStubs\EntityStubIntIdWithBrokeRules.cs" />
     <Compile Include="EntityBaseTests\EntityStubs\EntityStubStringId.cs" />
     <Compile Include="EntityBaseTests\EntityStubs\EntityStubStringIdWithBrokeRules.cs" />
     <Compile Include="EntityBrokenRuleTests\CheckNullTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestHelpersTests\ValidateEntityInAValidStateStubObjectTests.cs" />
     <Compile Include="ValidateValueObjectTests\EntityIsValidTests.cs" />
     <Compile Include="ValidateValueObjectTests\ThrowExceptionIfEntityInvalidTests.cs" />
     <Compile Include="ValueObjectTests\Stubs\ValueObjectStub.cs" />

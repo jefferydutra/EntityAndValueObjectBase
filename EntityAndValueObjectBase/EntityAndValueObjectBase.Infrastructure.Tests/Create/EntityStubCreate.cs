@@ -1,13 +1,16 @@
-﻿using EntityAndValueObjectBase.Infrastructure.Tests.EntityBaseTests.EntityStubs;
+﻿using EntityAndValueObjectBase.Infrastructure.Domain;
+using EntityAndValueObjectBase.Infrastructure.Tests.EntityBaseTests.EntityStubs;
 using Ploeh.AutoFixture;
 
 namespace EntityAndValueObjectBase.Infrastructure.Tests.Create
 {
     public static class EntityStubCreate
     {
-        public static EntityStub Anonymous(){
+        public static EntityStub Anonymous()
+        {
             return new Fixture().Create<EntityStub>();
         }
+
         public static EntityStubIntIdWithBrokeRules AnonymousWithBrokenRules()
         {
             return new Fixture().Create<EntityStubIntIdWithBrokeRules>();
@@ -22,5 +25,12 @@ namespace EntityAndValueObjectBase.Infrastructure.Tests.Create
         {
             return new Fixture().Create<EntityStubStringId>();
         }
-    }
+
+        public static EntityStubGuidId AnonymousGuidId()
+        {
+            return new Fixture().Create<EntityStubGuidId>();
+        }
+    }     
+
 }
+
